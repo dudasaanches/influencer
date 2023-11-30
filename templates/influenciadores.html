@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Titulo}}</title>
+    <link rel="stylesheet" href="/static/estilo.css" >
+</head>
+<body>
+    <header class="header">
+        <h1>{{ Titulo }}</h1>
+        <a class="btn" href="http://127.0.0.1:5000/Cadastro" >Cadastrar influenciador</a>
+    </header>
+    <div class="card">
+        {% for Influencer in ListaInfluenciadores %}
+        <div class="influ-card">
+            <h2> Nome: {{ Influencer.nome }}</h2>
+            <p> Plataforma: {{ Influencer.plataforma }}</p>
+            <p> Seguidores:{{ Influencer.seguidores }} </p>
+            <p> Área: {{ Influencer.areas }} </p>
+            <br>
+            <a href="excluir/{{ Influencer.nome }}">Excluir</a>
+            <a href="editar/{{ Influencer.nome }}">Editar</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
